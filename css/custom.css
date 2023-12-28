@@ -1,0 +1,35 @@
+.footer-ul {
+    display: inline-block;
+    color: #9c9c9c;
+    list-style: none;
+    line-height: 15px;
+    padding-left: 0;
+    margin: 0;
+}
+.footer-ul li {
+    display: block;
+    position: relative;
+    float: left;
+    border-right: 1px solid rgba(247, 172, 84, 0.6);
+    margin-right: 10px;
+    padding-right: 10px;
+    font-weight: 400;
+}
+.footer-ul li a {
+    color: #9c9c9c;
+}
+.footer-ul i {
+    color: rgba(247, 172, 84, 0.6);
+}
+.footer-ul li:last-child {
+    border-right: 0px;
+}
+
+.footer-social-ul {
+    display: inline-block;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+
