@@ -52,7 +52,7 @@
                             <div class="navbar-header">
 
                                 <!-- TEMPLATE LOGO LIGHT -->
-                                <a class="navbar-brand light-logo" href="#"><img src="images/logo.png" alt="" class="img-responsive"></a>
+                                <a class="navbar-brand light-logo" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="" class="img-responsive"></a>
 
                             </div>
 
@@ -209,7 +209,7 @@
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="features-image-outer">
                                         <div class="image-outer">
-                                            <img src="images/services-1.jpg" alt="Services Image" class="img-responsive">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-1.jpg" alt="Services Image" class="img-responsive">
                                         </div>
                                     </div>
                                 </div> <!-- End: Features Image Area -->
@@ -294,7 +294,7 @@
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="features-image-outer">
                                         <div class="image-outer">
-                                            <img src="images/services-1.jpg" alt="Services Image" class="img-responsive">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-1.jpg" alt="Services Image" class="img-responsive">
                                         </div>
                                     </div>
                                 </div> <!-- End: Features Image Area -->
@@ -379,7 +379,7 @@
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="features-image-outer">
                                         <div class="image-outer">
-                                            <img src="images/services-1.jpg" alt="Services Image" class="img-responsive">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services-1.jpg" alt="Services Image" class="img-responsive">
                                         </div>
                                     </div>
                                 </div> <!-- End: Features Image Area -->
@@ -508,7 +508,7 @@
                                         <div class="col-xs-10 col-xs-offset-1">
                                             <div class="row">
                                                 <div class="image text-center">
-                                                    <img src="images/features-1.jpg" alt="Features Image">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-1.jpg" alt="Features Image">
                                                 </div>
                                             </div>
                                         </div>
@@ -551,19 +551,19 @@
                                                         <div class="project-slider owl-carousel">
 
                                                             <div class="item">
-                                                                <img src="images/features-3.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-3.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-4.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-4.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-5.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-5.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-6.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-6.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-7.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-7.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             
                                                         </div>
@@ -615,7 +615,7 @@
                                                     <div class="col-sm-6 col-xs-12 vertical-middle overflow project-detail-image">
                                                         <div class="row text-right display-full">
                                                             <div class="project-detail-image-outer display-full">
-                                                                <img src="images/features-2.jpg" alt="Portfolio Image">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-2.jpg" alt="Portfolio Image">
                                                             </div>
                                                         </div>
                                                     </div> <!-- End: RIGHT SIDE -->
@@ -646,7 +646,7 @@
                                         <div class="col-xs-10 col-xs-offset-1">
                                             <div class="row">
                                                 <div class="image text-center">
-                                                    <img src="images/features-1.jpg" alt="Features Image">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-1.jpg" alt="Features Image">
                                                 </div>
                                             </div>
                                         </div>
@@ -689,19 +689,19 @@
                                                         <div class="project-slider owl-carousel">
 
                                                             <div class="item">
-                                                                <img src="images/features-3.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-3.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-4.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-4.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-5.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-5.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-6.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-6.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-7.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-7.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             
                                                         </div>
@@ -753,7 +753,7 @@
                                                     <div class="col-md-6 col-sm-12 vertical-middle overflow project-detail-image">
                                                         <div class="row text-right display-full">
                                                             <div class="project-detail-image-outer display-full">
-                                                                <img src="images/features-2.jpg" alt="Portfolio Image">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-2.jpg" alt="Portfolio Image">
                                                             </div>
                                                         </div>
                                                     </div> <!-- End: RIGHT SIDE -->
@@ -784,7 +784,7 @@
                                         <div class="col-xs-10 col-xs-offset-1">
                                             <div class="row">
                                                 <div class="image text-center">
-                                                    <img src="images/features-1.jpg" alt="Features Image">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-1.jpg" alt="Features Image">
                                                 </div>
                                             </div>
                                         </div>
@@ -827,19 +827,19 @@
                                                         <div class="project-slider owl-carousel">
 
                                                             <div class="item">
-                                                                <img src="images/features-3.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-3.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-4.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-4.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-5.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-5.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-6.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-6.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-7.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-7.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             
                                                         </div>
@@ -891,7 +891,7 @@
                                                     <div class="col-md-6 col-sm-12 vertical-middle overflow project-detail-image">
                                                         <div class="row text-right display-full">
                                                             <div class="project-detail-image-outer display-full">
-                                                                <img src="images/features-2.jpg" alt="Portfolio Image">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-2.jpg" alt="Portfolio Image">
                                                             </div>
                                                         </div>
                                                     </div> <!-- End: RIGHT SIDE -->
@@ -922,7 +922,7 @@
                                         <div class="col-xs-10 col-xs-offset-1">
                                             <div class="row">
                                                 <div class="image text-center">
-                                                    <img src="images/features-1.jpg" alt="Features Image">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-1.jpg" alt="Features Image">
                                                 </div>
                                             </div>
                                         </div>
@@ -965,19 +965,19 @@
                                                         <div class="project-slider owl-carousel">
 
                                                             <div class="item">
-                                                                <img src="images/features-3.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-3.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-4.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-4.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-5.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-5.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-6.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-6.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             <div class="item">
-                                                                <img src="images/features-7.jpg" alt="Slider Images" class="img-responsive">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-7.jpg" alt="Slider Images" class="img-responsive">
                                                             </div>
                                                             
                                                         </div>
@@ -1029,7 +1029,7 @@
                                                     <div class="col-md-6 col-sm-12 vertical-middle overflow project-detail-image">
                                                         <div class="row text-right display-full">
                                                             <div class="project-detail-image-outer display-full">
-                                                                <img src="images/features-2.jpg" alt="Portfolio Image">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-2.jpg" alt="Portfolio Image">
                                                             </div>
                                                         </div>
                                                     </div> <!-- End: RIGHT SIDE -->
@@ -1110,13 +1110,13 @@
                             
                             <!-- OUR CLIENTS LOGO -->
                             <ul class="nav client-logo wow">
-                                <li><img src="images/clients-logo/1.png" alt=""></li>
-                                <li><img src="images/clients-logo/2.png" alt=""></li>
-                                <li><img src="images/clients-logo/3.png" alt=""></li>
-                                <li><img src="images/clients-logo/4.png" alt=""></li>
-                                <li><img src="images/clients-logo/5.png" alt=""></li>
-                                <li><img src="images/clients-logo/6.png" alt=""></li>
-                                <li><img src="images/clients-logo/7.png" alt=""></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/1.png" alt=""></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/2.png" alt=""></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/3.png" alt=""></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/4.png" alt=""></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/5.png" alt=""></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/6.png" alt=""></li>
+                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/7.png" alt=""></li>
                             </ul>
 
                         </div> <!-- End: .overflow -->
@@ -1131,7 +1131,7 @@
 
                                     <div class="overflow">
                                         <div class="image-outer">
-                                            <img src="images/testimonial/1.jpg">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/1.jpg">
                                         </div>
                                     </div>
                                     <div class="overflow m-t-40">
@@ -1151,7 +1151,7 @@
 
                                     <div class="overflow">
                                         <div class="image-outer">
-                                            <img src="images/testimonial/2.jpg">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/2.jpg">
                                         </div>
                                     </div>
                                     <div class="overflow m-t-40">
@@ -1171,7 +1171,7 @@
 
                                     <div class="overflow">
                                         <div class="image-outer">
-                                            <img src="images/testimonial/2.jpg">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/2.jpg">
                                         </div>
                                     </div>
                                     <div class="overflow m-t-40">
@@ -1241,7 +1241,7 @@
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="images/testimonial/7.jpg" alt="Team Member" class="">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/7.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">SAMUEL ADEDAYO</span>
@@ -1259,7 +1259,7 @@
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="images/testimonial/3.jpg" alt="Team Member" class="">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/3.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">MARTINS ANERUA</span>
@@ -1277,7 +1277,7 @@
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="images/testimonial/1.jpg" alt="Team Member" class="">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/1.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">RICHARD STALLMAN</span>
@@ -1295,7 +1295,7 @@
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="images/testimonial/4.jpg" alt="Team Member" class="">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/4.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">ADA LOVELACE</span>
@@ -1313,7 +1313,7 @@
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="images/testimonial/5.jpg" alt="Team Member" class="">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/5.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">Grace Hopper</span>
@@ -1331,7 +1331,7 @@
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="images/testimonial/6.jpg" alt="Team Member" class="">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/6.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">Peter Norvig</span>
@@ -1397,7 +1397,7 @@
                                 <form id="contact-form" method="post" class="dark-background single-form" action="php/sendmail.php">
 
                                     <div class="message col-xs-12">
-                                        <p class="email-loading"><img src="images/loading.gif" alt="">&nbsp;&nbsp;&nbsp;Sending...</p>
+                                        <p class="email-loading"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/loading.gif" alt="">&nbsp;&nbsp;&nbsp;Sending...</p>
                                         <p class="email-success"><i class="icon icon-icon-check-alt2"></i> Your quote has successfully been sent.</p>
                                         <p class="email-failed"><i class="icon icon-icon-close-alt2"></i> Something went wrong!</p>
                                     </div>
@@ -1478,7 +1478,7 @@
                                     <div class="overflow">
                                         <div class="logo-outer wow">
                                             <a href="index.html" class="logo-link">
-                                                <img src="images/logo.png" alt="" class="img-responsive logo">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="" class="img-responsive logo">
                                             </a>
                                         </div>
                                     </div>
@@ -1530,20 +1530,7 @@
         - CONTACT US PAGE
     ====================================-->
 
-
-
-
-    
-    <!-- SCRIPTS 
-    ========================================-->
-    <script src="js/plagin-js/jquery-1.11.3.js"></script>
-    <script src="js/plagin-js/preloader.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/plagin-js/plagin.js"></script>
-
-    <!-- Custom Script 
-    ==========================================-->
-    <script src="js/custom-scripts.js"></script>
+    <?php wp_footer(); ?>
 
 
 

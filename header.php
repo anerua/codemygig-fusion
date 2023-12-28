@@ -6,35 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="developer" content="TemplateOcean">
     <?php wp_head(); ?>
-    
-    <!-- FAV AND TOUCH ICONS   -->
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-
-    <!-- GOOGLE FONTS -->
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900' rel='stylesheet' type='text/css'>
-    <!-- font-family: 'Merriweather', serif; -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!-- font-family: 'Open Sans', sans-serif; -->
-
-    <!-- BOOTSTRAP CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-
-    <!-- Image Slider -->
-    <link rel="stylesheet" href="css/plagin-css/owl.carousel.css">
-
-    <!-- FONT ICONS -->
-    <link rel="stylesheet" href="icons/rik-icons/styles.css">
-
-    <!-- BOX ICONS -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!--   COUSTOM CSS link  -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body class="style-1">
@@ -51,7 +22,7 @@
                 </button>
 
                 <!-- TEMPLATE LOGO LIGHT -->
-                <a class="navbar-brand light-logo btn-scroll" href="#home-section"><img src="images/logo.png" alt="" class="img-responsive"></a>
+                <a class="navbar-brand light-logo btn-scroll" href="#home-section"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="" class="img-responsive"></a>
 
             </div>
             
