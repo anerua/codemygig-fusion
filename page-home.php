@@ -1514,7 +1514,7 @@
                             </div>
                             <div class="row m-t-5">
                                 <div class="text-center footer-copyright">
-                                    Copyright &copy; 2023 Code My Gig. All rights reserved.
+                                    Copyright &copy; <?php echo date('Y'); ?> Code My Gig. All rights reserved.
                                 </div>
                             </div>
                         </div> <!-- End: .contact-footer -->
