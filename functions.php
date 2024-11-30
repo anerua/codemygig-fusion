@@ -53,8 +53,8 @@ function codemygigfusion_load_scripts() {
         );
 }
 
-// Register Portfolio Custom Post Type
-function create_portfolio_post_type() {
+// Portfolio Custom Post Type
+function register_portfolio_post_type() {
     register_post_type('portfolio',
         array(
             'labels' => array(
@@ -78,7 +78,31 @@ function create_portfolio_post_type() {
     );
 }
 
-// Add ACF fields
+// Register Testimonials Custom Post Type
+function register_testimonials_post_type() {
+    register_post_type('testimonial',
+        array(
+            'labels' => array(
+                'name' => __('Testimonials'),
+                'singular_name' => __('Testimonial'),
+                'add_new' => __('Add New Testimonial'),
+                'add_new_item' => __('Add New Testimonial'),
+                'edit_item' => __('Edit Testimonial'),
+                'new_item' => __('New Testimonial'),
+                'view_item' => __('View Testimonial'),
+                'search_items' => __('Search Testimonials'),
+                'not_found' => __('No testimonials found'),
+                'not_found_in_trash' => __('No testimonials found in trash')
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'menu_icon' => 'dashicons-format-quote',
+            'supports' => array('title', 'editor', 'thumbnail')
+        )
+    );
+}
+
+// ACF fields - Portfolio 
 function add_portfolio_custom_fields() {
     if(function_exists("register_field_group")) {
         register_field_group(array(
@@ -142,8 +166,51 @@ function add_portfolio_custom_fields() {
     }
 }
 
+// ACF fields - Testimonials
+function add_testimonials_custom_fields() {
+    if(function_exists("register_field_group")) {
+        register_field_group(array(
+            'id' => 'testimonials_fields',
+            'title' => 'Testimonial Details',
+            'fields' => array(
+                array(
+                    'key' => 'field_position',
+                    'label' => 'Position',
+                    'name' => 'position',
+                    'type' => 'text',
+                    'instructions' => 'Enter the position of the person (e.g., CEO)',
+                    'required' => true,
+                ),
+                array(
+                    'key' => 'field_company',
+                    'label' => 'Company',
+                    'name' => 'company',
+                    'type' => 'text',
+                    'instructions' => 'Enter the name of the company',
+                    'required' => true,
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'testimonial'
+                    )
+                )
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+        ));
+    }
+}
 
 add_action('after_setup_theme', 'codemygigfusion_theme_setup');
-add_action('init', 'create_portfolio_post_type');
-add_action('acf/init', 'add_portfolio_custom_fields'); 
+add_action('init', 'register_portfolio_post_type');
+add_action('init', 'register_testimonials_post_type');
+add_action('acf/init', 'add_portfolio_custom_fields');
+add_action('acf/init', 'add_testimonials_custom_fields');
 add_action( 'wp_enqueue_scripts', 'codemygigfusion_load_scripts' );

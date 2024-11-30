@@ -686,90 +686,37 @@
                     </div>
                     <!-- End: Section Heading -->
 
-                    <div class="clearfix"></div>
-
-                    <div class="col-xs-12 m-t-30">
-                        <div class="overflow text-center">
-                            
-                            <!-- OUR CLIENTS LOGO -->
-                            <ul class="nav client-logo wow">
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/1.png" alt=""></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/2.png" alt=""></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/3.png" alt=""></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/4.png" alt=""></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/5.png" alt=""></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/6.png" alt=""></li>
-                                <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients-logo/7.png" alt=""></li>
-                            </ul>
-
-                        </div> <!-- End: .overflow -->
-                    </div> <!-- End: .col-xs-12 -->
-
                     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 overflow">
                         <div class="testimonial-container wow">
                             <div class="testimonial-wrapper pagination-style-1 owl-carousel">
+                                <?php 
+                                $testimonials = new WP_Query(array(
+                                    'post_type' => 'testimonial',
+                                    'posts_per_page' => -1
+                                ));
 
+                                while($testimonials->have_posts()) : $testimonials->the_post();
+                                    $position = get_field('position');
+                                    $company = get_field('company');
+                                ?>
                                 <!-- SLIDES -->
                                 <div class="item">
-
-                                    <div class="overflow">
-                                        <div class="image-outer">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/1.jpg">
-                                        </div>
-                                    </div>
                                     <div class="overflow m-t-40">
                                         <div class="text-outer">
-                                            <blockquote>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolor optio odio nostrum repellat autem tenetur nesciunt quae, dolorum veniam est nemo totam iure deserunt at fugit. Suscipit, repellat totam?”</blockquote>
+                                            <blockquote>“<?php echo strip_tags(get_the_content()); ?>”</blockquote>
                                         </div>
                                     </div>
                                     <div class="overflow m-t-40 m-b-30">
                                         <div class="profile-outer">
-                                            <span class="name">ABIODUN PETER</span>
-                                            <span class="position">CEO, Abbey Precious Touch</span>
+                                            <span class="name"><?php echo strtoupper(get_the_title()); ?></span>
+                                            <span class="position"><?php echo esc_html($position); ?>, <?php echo esc_html($company); ?></span>
                                         </div>
                                     </div>
-
-                                </div> <!-- End: .swiper-slider -->
-                                <div class="item">
-
-                                    <div class="overflow">
-                                        <div class="image-outer">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/2.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="overflow m-t-40">
-                                        <div class="text-outer">
-                                            <blockquote>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolor optio odio nostrum repellat autem tenetur nesciunt quae, dolorum veniam est nemo totam iure deserunt at fugit. Suscipit, repellat totam?”</blockquote>
-                                        </div>
-                                    </div>
-                                    <div class="overflow m-t-40 m-b-30">
-                                        <div class="profile-outer">
-                                            <span class="name">NAOLO CHARLES</span>
-                                            <span class="position">Founder, BE Initiative</span>
-                                        </div>
-                                    </div>
-
-                                </div> <!-- End: .swiper-slider -->
-                                <div class="item">
-
-                                    <div class="overflow">
-                                        <div class="image-outer">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/2.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="overflow m-t-40">
-                                        <div class="text-outer">
-                                            <blockquote>“Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique quae quod ullam ipsa aut deleniti et repellat, soluta magni cum nobis quibusdam vel porro impedit explicabo vero delectus iusto commodi!”</blockquote>
-                                        </div>
-                                    </div>
-                                    <div class="overflow m-t-40 m-b-30">
-                                        <div class="profile-outer">
-                                            <span class="name">JACOB LUKE</span>
-                                            <span class="position">CEO, Acme Industries</span>
-                                        </div>
-                                    </div>
-
-                                </div> <!-- End: .swiper-slider -->
+                                </div>
+                                <?php 
+                                endwhile;
+                                wp_reset_postdata();
+                                ?>
 
                             </div> <!-- End: .swiper-wrapper -->
                         </div> <!-- End: .testimonials-container -->
