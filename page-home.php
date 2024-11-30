@@ -736,13 +736,13 @@
     <!--Start: 5th Section  
         - OUR TEAM PAGE
     ====================================-->
-    <div class=" section section-item combine-section hide-overlay overflow dark-background" id="team-section">
+    <!-- <div class=" section section-item combine-section hide-overlay overflow dark-background" id="team-section">
         <div class="inner-container team-member dark-background">
             <div class="container">
-                <div class="row section-separator sp-bottom">
+                <div class="row section-separator sp-bottom"> -->
                     
                     <!-- Start: Section Heading -->
-                    <div class="section-header col-sm-10 col-sm-offset-1">
+                    <!-- <div class="section-header col-sm-10 col-sm-offset-1">
                         <div class="overflow">
                             <div class="line-outer">
                                 <div class="line wow"></div>
@@ -758,20 +758,20 @@
                                 <h2 class="section-heading wow">Seasoned Experts To Handle Your Project Needs</h2>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- End: Section Heading -->
 
-                    <div class="clearfix"></div>
+                    <!-- <div class="clearfix"></div>
 
                     <div class="col-sm-12 grid-item m-t-30">
-                        <div class="row">
+                        <div class="row"> -->
 
-                            <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
+                            <!-- <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
                                 <div class="item-inner overflow absolute">
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/7.jpg" alt="Team Member" class="">
+                                            <img src="<?php #echo get_template_directory_uri(); ?>/assets/images/testimonial/7.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">SAMUEL ADEDAYO</span>
@@ -783,13 +783,14 @@
                                     </div>
 
                                 </div>
-                            </div> <!-- End: .each-item -->
-                            <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
+                            </div>  -->
+                            <!-- End: .each-item -->
+                            <!-- <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
                                 <div class="item-inner overflow absolute">
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/3.jpg" alt="Team Member" class="">
+                                            <img src="<?php #echo get_template_directory_uri(); ?>/assets/images/testimonial/3.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">MARTINS ANERUA</span>
@@ -801,13 +802,14 @@
                                     </div>
 
                                 </div>
-                            </div> <!-- End: .each-item -->
-                            <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
+                            </div> -->
+                            <!-- End: .each-item -->
+                            <!-- <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
                                 <div class="item-inner overflow absolute">
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/1.jpg" alt="Team Member" class="">
+                                            <img src="<?php #echo get_template_directory_uri(); ?>/assets/images/testimonial/1.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">RICHARD STALLMAN</span>
@@ -819,13 +821,17 @@
                                     </div>
 
                                 </div>
-                            </div> <!-- End: .each-item -->
-                            <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
+                            </div> -->
+                            <!-- End: .each-item -->
+                            <!-- <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
                                 <div class="item-inner overflow absolute">
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/4.jpg" alt="Team Member" class="">
+                                            <img src="
+                                            <?php # echo get_template_directory_uri(); ?>
+                                            /
+                                            assets/images/testimonial/4.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">ADA LOVELACE</span>
@@ -837,13 +843,14 @@
                                     </div>
 
                                 </div>
-                            </div> <!-- End: .each-item -->
-                            <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
+                            </div>  -->
+                            <!-- End: .each-item -->
+                            <!-- <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
                                 <div class="item-inner overflow absolute">
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/5.jpg" alt="Team Member" class="">
+                                            <img src="<?php #echo get_template_directory_uri(); ?>/assets/images/testimonial/5.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">Grace Hopper</span>
@@ -855,13 +862,14 @@
                                     </div>
 
                                 </div>
-                            </div> <!-- End: .each-item -->
-                            <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
+                            </div>  -->
+                            <!-- End: .each-item -->
+                            <!-- <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
                                 <div class="item-inner overflow absolute">
 
                                     <div class="profile-outer center">
                                         <div class="profile-image">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial/6.jpg" alt="Team Member" class="">
+                                            <img src="<?php #echo get_template_directory_uri(); ?>/assets/images/testimonial/6.jpg" alt="Team Member" class="">
                                         </div>
                                         <div class="profile-content">
                                             <span class="name">Peter Norvig</span>
@@ -873,16 +881,21 @@
                                     </div>
 
                                 </div>
-                            </div> <!-- End: .each-item -->
+                            </div> -->
+                            <!-- End: .each-item -->
 
-                        </div>
-                    </div> <!-- End: .col-xs-12 -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- End: .col-xs-12 -->
 
-                </div> <!-- End: .row -->
-            </div> <!-- End: .container -->
-        </div> <!-- End: .inner-container -->
+                <!-- </div>  -->
+                <!-- End: .row -->
+            <!-- </div>  -->
+            <!-- End: .container -->
+        <!-- </div>  -->
+        <!-- End: .inner-container -->
 
-    </div>
+    <!-- </div> -->
     <!--End: 5th Section  
         - OUR TEAM PAGE
     ====================================-->
@@ -1044,7 +1057,7 @@
                             </div>
                             <div class="row m-t-5">
                                 <div class="text-center footer-copyright">
-                                    Copyright &copy; <?php echo date('Y'); ?> Code My Gig. All rights reserved.
+                                    Copyright &copy; <?php echo date('Y'); ?> CodeMyGig Software Limited. All rights reserved.
                                 </div>
                             </div>
                         </div> <!-- End: .contact-footer -->
