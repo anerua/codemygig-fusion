@@ -66,3 +66,54 @@
 }
 
 
+.portfolio-image {
+    filter: brightness(0.4); /* Adjust value between 0 and 1 */
+    transition: filter 0.3s ease; /* Optional: adds smooth transition */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Optional: return to normal brightness on hover */
+.portfolio-image:hover {
+    filter: brightness(0.6);
+}
+
+.portfolio-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.project-detail-inner {
+    min-height: 400px;
+    display: flex;
+    align-items: stretch; /* Makes both columns same height */
+}
+
+.project-detail-image {
+    display: flex;
+    align-items: center;
+}
+
+.project-detail-image-wrapper {
+    width: 100%;
+    height: 100%; /* Takes full height of parent */
+    overflow: hidden;
+}
+
+.project-detail-img.hover-zoom {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 5.0s ease; /* Smooth transition for zoom effect */
+}
+
+.project-detail-img.hover-zoom:hover {
+    object-fit: contain; /* Changes to contain on hover */
+    transform: scale(1.1); /* Optional: adds slight zoom effect */
+}

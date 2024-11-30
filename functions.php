@@ -1,5 +1,9 @@
 <?php
 
+function codemygigfusion_theme_setup() {
+    add_theme_support('post-thumbnails');
+}
+
 function codemygigfusion_load_scripts() {
 
     // Favicon and Touch icons
@@ -49,4 +53,97 @@ function codemygigfusion_load_scripts() {
         );
 }
 
+// Register Portfolio Custom Post Type
+function create_portfolio_post_type() {
+    register_post_type('portfolio',
+        array(
+            'labels' => array(
+                'name' => __('Portfolio'),
+                'singular_name' => __('Portfolio Item'),
+                'add_new' => __('Add New Portfolio Item'),
+                'add_new_item' => __('Add New Portfolio Item'),
+                'edit_item' => __('Edit Portfolio Item'),
+                'new_item' => __('New Portfolio Item'),
+                'view_item' => __('View Portfolio Item'),
+                'search_items' => __('Search Portfolio Items'),
+                'not_found' => __('No portfolio items found'),
+                'not_found_in_trash' => __('No portfolio items found in trash')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array('title', 'editor', 'thumbnail', 'revisions'),
+            'menu_icon' => 'dashicons-portfolio',
+            'menu_position' => 5
+        )
+    );
+}
+
+// Add ACF fields
+function add_portfolio_custom_fields() {
+    if(function_exists("register_field_group")) {
+        register_field_group(array(
+            'id' => 'portfolio_fields',
+            'title' => 'Portfolio Details',
+            'fields' => array(
+                array(
+                    'key' => 'field_category',
+                    'label' => 'Category',
+                    'name' => 'category',
+                    'type' => 'text',
+                    'instructions' => 'Enter the project category (e.g., CLEANING SERVICE)',
+                    'required' => true,
+                ),
+                array(
+                    'key' => 'field_completion_date',
+                    'label' => 'Completion Date',
+                    'name' => 'completion_date',
+                    'type' => 'date_picker',
+                    'instructions' => 'Select the project completion date',
+                    'required' => true,
+                    'display_format' => 'F Y',
+                    'return_format' => 'F Y',
+                    'first_day' => 1,
+                ),
+                array(
+                    'key' => 'field_project_url',
+                    'label' => 'Project URL',
+                    'name' => 'project_url',
+                    'type' => 'url',
+                    'instructions' => 'Enter the live project URL',
+                ),
+                array(
+                    'key' => 'field_slider_images',
+                    'label' => 'Slider Images',
+                    'name' => 'slider_images',
+                    'type' => 'gallery',
+                    'instructions' => 'Add images for the project slider',
+                    'required' => true,
+                    'min' => 1,
+                    'return_format' => 'array',
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                )
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'portfolio'
+                    )
+                )
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+        ));
+    }
+}
+
+
+add_action('after_setup_theme', 'codemygigfusion_theme_setup');
+add_action('init', 'create_portfolio_post_type');
+add_action('acf/init', 'add_portfolio_custom_fields'); 
 add_action( 'wp_enqueue_scripts', 'codemygigfusion_load_scripts' );

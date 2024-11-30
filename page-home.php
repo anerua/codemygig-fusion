@@ -498,17 +498,26 @@
                     <div class="col-sm-12 overflow">
                         <div class="row portfolio-container wow">
                             <div class="portfolio-wrapper pagination-style-1 owl-carousel">
-
                                 <!-- SLIDES -->
+                                <?php 
+                                $portfolio_items = new WP_Query(array(
+                                    'post_type' => 'portfolio',
+                                    'posts_per_page' => -1
+                                ));
 
-                                <div class="item ">
-                                    
+                                while($portfolio_items->have_posts()) : $portfolio_items->the_post();
+                                    $category = get_field('category');
+                                    $completion_date = get_field('completion_date');
+                                    $project_url = get_field('project_url');
+                                    $slider_images = get_field('slider_images');
+                                ?>
+
+                                <div class="item">
                                     <div class="porifolio-section overflow">
-
                                         <div class="col-xs-10 col-xs-offset-1">
                                             <div class="row">
-                                                <div class="image text-center">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-1.jpg" alt="Features Image">
+                                                <div class="image text-center portfolio-image-wrapper">
+                                                    <?php the_post_thumbnail('full', array('class' => 'img-responsive portfolio-image')); ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -518,12 +527,12 @@
                                                 <div class="line"></div>
                                                 <div class="overflow">
                                                     <div class="sub-heading-outer">
-                                                        <p class="sub-heading">CLEANING SERVICE</p>
+                                                        <p class="sub-heading"><?php echo esc_html($category); ?></p>
                                                     </div>
                                                 </div>
                                                 <div class="text overflow">
                                                     <div class="inner">
-                                                        Precious Touch
+                                                        <?php the_title(); ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -546,26 +555,16 @@
                                         <div class="col-md-10 col-md-offset-1 col-sm-12 slider-outer">
                                             <div class="overflow">
                                                 <div class="slider text-center">
-                                                    
                                                     <div class="project-slider-outer">
                                                         <div class="project-slider owl-carousel">
-
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-3.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-4.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-5.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-6.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-7.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            
+                                                            <?php 
+                                                            if($slider_images) :
+                                                                foreach($slider_images as $image) : ?>
+                                                                    <div class="item">
+                                                                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="img-responsive">
+                                                                    </div>
+                                                                <?php endforeach;
+                                                            endif; ?>
                                                         </div>
                                                     </div>
 
@@ -577,50 +576,46 @@
                                         </div>
 
                                         <div class="col-xs-12 project-detail-outer">
-                                                
                                             <div class="project-detail">
                                                 <div class="project-detail-inner relative semi-dark-background overflow">
-
                                                     <div class="col-sm-6 col-xs-12 vertical-middle project-detail-content">
-                                                            
                                                         <div class="overflow">
                                                             <div class="heading-outer">
-                                                                <h2 class="heading">Precious Touch</h2>
+                                                                <h2 class="heading"><?php the_title(); ?></h2>
                                                             </div>
-                                                        </div> <!-- End: .overflow -->
+                                                        </div>
 
                                                         <div class="overflow">
                                                             <ul class="nav list">
-                                                                <li><p class="sub-heading">PROFESSIONAL CLEANING SERVICE</p></li>
-                                                                <li><p class="sub-heading">AUGUST 2023</p></li>
+                                                                <li><p class="sub-heading"><?php echo esc_html($category); ?></p></li>
+                                                                <li><p class="sub-heading"><?php echo esc_html($completion_date); ?></p></li>
                                                             </ul>
-                                                        </div> <!-- End: .overflow -->
+                                                        </div>
 
                                                         <div class="overflow">
                                                             <div class="pera-outer m-t-30">
-                                                                <p>Precious Touch is a carefully crafted website for a professional cleaning and janitorial service provider in the United States.</p>
-                                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, eveniet iusto error voluptates, totam ut quidem quasi quam consequatur quod et illo tempora. Obcaecati, dolores nostrum? Laboriosam rerum labore quisquam?</p>
+                                                                <?php the_content(); ?>
                                                             </div>
-                                                        </div> <!-- End: .overflow -->
+                                                        </div>
 
+                                                        <?php if($project_url) : ?>
                                                         <div class="overflow">
                                                             <div class="full-view-outer">
-                                                                <a href="https://abbeyprecioustouch.com" target="_blank" class="btn right-icon btn-mask">SEE THE PROJECT <i class="icon icon-arrow-right"></i></a>
+                                                                <a href="<?php echo esc_url($project_url); ?>" target="_blank" class="btn right-icon btn-mask">SEE THE PROJECT <i class="icon icon-arrow-right"></i></a>
                                                             </div>
-                                                        </div> <!-- End: .overflow -->
+                                                        </div>
+                                                        <?php endif; ?>
 
-                                                    </div> <!-- End: END LEFT SIDE -->
+                                                    </div>
 
                                                     <!-- Right side Image -->
                                                     <div class="col-sm-6 col-xs-12 vertical-middle overflow project-detail-image">
-                                                        <div class="row text-right display-full">
-                                                            <div class="project-detail-image-outer display-full">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-2.jpg" alt="Portfolio Image">
-                                                            </div>
+                                                        <div class="project-detail-image-wrapper">
+                                                            <?php the_post_thumbnail('full', array('class' => 'project-detail-img hover-zoom')); ?>
                                                         </div>
-                                                    </div> <!-- End: RIGHT SIDE -->
+                                                    </div>
 
-                                                </div> <!-- End: .project-detail-content -->
+                                                </div>
 
                                                 <div class="clearfix"></div>
                                                 
@@ -632,427 +627,15 @@
                                                 </div>
                                                 <!-- End: Back Button Area -->
 
-                                            </div> <!-- End: .project-detail -->
-
-                                        </div> <!-- End: .col-xs-12 -->
-
-                                    </div> 
-
-                                </div> <!-- End: .item -->
-                                <div class="item ">
-                                    
-                                    <div class="porifolio-section overflow">
-
-                                        <div class="col-xs-10 col-xs-offset-1">
-                                            <div class="row">
-                                                <div class="image text-center">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-1.jpg" alt="Features Image">
-                                                </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <div class="each-portfolio-heading">
-                                            <div class="heading-text overflow wow">
-                                                <div class="line"></div>
-                                                <div class="overflow">
-                                                    <div class="sub-heading-outer">
-                                                        <p class="sub-heading">Non-Profit Organization</p>
-                                                    </div>
-                                                </div>
-                                                <div class="text overflow">
-                                                    <div class="inner">
-                                                        BE Initiative
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="link-list overflow wow">
-                                                <div class="link one overflow">
-                                                    <div class="inner">
-                                                        <a class="btn btn-project-detail right-icon btn-mask" href="#" data-element="project-detail">PROJECT DETAILS <i class="icon icon-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="link two overflow">
-                                                    <div class="inner">
-                                                        <a class="btn btn-slider right-icon btn-mask"  data-element="slider">VIEW SLIDES <i class="icon icon-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="line hidden-xs"></div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-10 col-md-offset-1 col-sm-12 slider-outer">
-                                            <div class="overflow">
-                                                <div class="slider text-center">
-                                                    
-                                                    <div class="project-slider-outer">
-                                                        <div class="project-slider owl-carousel">
-
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-3.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-4.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-5.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-6.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-7.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="btn-outer text-left">
-                                                        <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xs-12 project-detail-outer">
-                                                
-                                            <div class="project-detail">
-                                                <div class="project-detail-inner relative semi-dark-background overflow">
-
-                                                    <div class="col-md-6 col-sm-12 vertical-middle project-detail-content">
-                                                            
-                                                        <div class="overflow">
-                                                            <div class="heading-outer">
-                                                                <h2 class="heading">Black Environmental Initiative</h2>
-                                                            </div>
-                                                        </div> <!-- End: .overflow -->
-
-                                                        <div class="overflow">
-                                                            <ul class="nav list">
-                                                                <li><p class="sub-heading">NON-PROFIT ORGANIZATION</p></li>
-                                                                <li><p class="sub-heading">OCTOBER 2023</p></li>
-                                                            </ul>
-                                                        </div> <!-- End: .overflow -->
-
-                                                        <div class="overflow">
-                                                            <div class="pera-outer m-t-30">
-                                                                <p>Black Environmental Initiative (BE Initiative) is a non-profit organization in Canada that promotes the environmental engagement of black communities and the environmental protection of all people, especially low-income communities.</p>
-                                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus porro. Laborum recusandae nam quam nisi deleniti quis ad, reprehenderit dolorem accusamus ipsam est pariatur eveniet soluta blanditiis laboriosam dicta?</p>
-                                                            </div>
-                                                        </div> <!-- End: .overflow -->
-
-                                                        <div class="overflow">
-                                                            <div class="full-view-outer">
-                                                                <a href="https://beinitiative.com" class="btn right-icon btn-mask">SEE THE PROJECT <i class="icon icon-arrow-right"></i></a>
-                                                            </div>
-                                                        </div> <!-- End: .overflow -->
-
-                                                    </div> <!-- End: END LEFT SIDE -->
-
-                                                    <!-- Right side Image -->
-                                                    <div class="col-md-6 col-sm-12 vertical-middle overflow project-detail-image">
-                                                        <div class="row text-right display-full">
-                                                            <div class="project-detail-image-outer display-full">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-2.jpg" alt="Portfolio Image">
-                                                            </div>
-                                                        </div>
-                                                    </div> <!-- End: RIGHT SIDE -->
-
-                                                </div> <!-- End: .project-detail-content -->
-
-                                                <div class="clearfix"></div>
-                                                
-                                                <!-- Back Button Area -->
-                                                <div class="overflow">
-                                                    <div class="btn-outer text-center m-t-30">
-                                                        <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                    </div>
-                                                </div>
-                                                <!-- End: Back Button Area -->
-
-                                            </div> <!-- End: .project-detail -->
-
-                                        </div> <!-- End: .col-xs-12 -->
-
-                                    </div> 
-
-                                </div> <!-- End: .item -->
-                                <div class="item ">
-                                    
-                                    <div class="porifolio-section overflow">
-
-                                        <div class="col-xs-10 col-xs-offset-1">
-                                            <div class="row">
-                                                <div class="image text-center">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-1.jpg" alt="Features Image">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="each-portfolio-heading">
-                                            <div class="heading-text overflow wow">
-                                                <div class="line"></div>
-                                                <div class="overflow">
-                                                    <div class="sub-heading-outer">
-                                                        <p class="sub-heading">HOSPITALITY</p>
-                                                    </div>
-                                                </div>
-                                                <div class="text overflow">
-                                                    <div class="inner">
-                                                        Royshire Cantina
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="link-list overflow wow">
-                                                <div class="link one overflow">
-                                                    <div class="inner">
-                                                        <a class="btn btn-project-detail right-icon btn-mask" href="#" data-element="project-detail">PROJECT DETAILS <i class="icon icon-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="link two overflow">
-                                                    <div class="inner">
-                                                        <a class="btn btn-slider right-icon btn-mask"  data-element="slider">VIEW SLIDES <i class="icon icon-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="line hidden-xs"></div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-10 col-md-offset-1 col-sm-12 slider-outer">
-                                            <div class="overflow">
-                                                <div class="slider text-center">
-                                                    
-                                                    <div class="project-slider-outer">
-                                                        <div class="project-slider owl-carousel">
-
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-3.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-4.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-5.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-6.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-7.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="btn-outer text-left">
-                                                        <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xs-12 project-detail-outer">
-                                                
-                                            <div class="project-detail">
-                                                <div class="project-detail-inner relative semi-dark-background overflow">
-
-                                                    <div class="col-md-6 col-sm-12 vertical-middle project-detail-content">
-                                                            
-                                                        <div class="overflow">
-                                                            <div class="heading-outer">
-                                                                <h2 class="heading">Royshire Cantina</h2>
-                                                            </div>
-                                                        </div> <!-- End: .overflow -->
-
-                                                        <div class="overflow">
-                                                            <ul class="nav list">
-                                                                <li><p class="sub-heading">HOSPITALITY</p></li>
-                                                                <li><p class="sub-heading">DECEMBER 2023</p></li>
-                                                            </ul>
-                                                        </div> <!-- End: .overflow -->
-
-                                                        <div class="overflow">
-                                                            <div class="pera-outer m-t-30">
-                                                                <p>Royshire Cantina is a luxury hotel located in the heart of Lagos, Nigeria that offers premium hospitality services.</p>
-                                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde accusamus itaque quos fuga vitae eligendi inventore excepturi eum ut, iure asperiores, maxime eaque dolorem. Non illum officia sequi dolore vel.</p>
-                                                            </div>
-                                                        </div> <!-- End: .overflow -->
-
-                                                        <div class="overflow">
-                                                            <div class="full-view-outer">
-                                                                <a href="https://royshirecantina.com" class="btn right-icon btn-mask">SEE THE PROJECT <i class="icon icon-arrow-right"></i></a>
-                                                            </div>
-                                                        </div> <!-- End: .overflow -->
-
-                                                    </div> <!-- End: END LEFT SIDE -->
-
-                                                    <!-- Right side Image -->
-                                                    <div class="col-md-6 col-sm-12 vertical-middle overflow project-detail-image">
-                                                        <div class="row text-right display-full">
-                                                            <div class="project-detail-image-outer display-full">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-2.jpg" alt="Portfolio Image">
-                                                            </div>
-                                                        </div>
-                                                    </div> <!-- End: RIGHT SIDE -->
-
-                                                </div> <!-- End: .project-detail-content -->
-
-                                                <div class="clearfix"></div>
-                                                
-                                                <!-- Back Button Area -->
-                                                <div class="overflow">
-                                                    <div class="btn-outer text-center m-t-30">
-                                                        <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                    </div>
-                                                </div>
-                                                <!-- End: Back Button Area -->
-
-                                            </div> <!-- End: .project-detail -->
-
-                                        </div> <!-- End: .col-xs-12 -->
-
-                                    </div> 
-
-                                </div> <!-- End: .item -->
-                                <div class="item ">
-                                    
-                                    <div class="porifolio-section overflow">
-
-                                        <div class="col-xs-10 col-xs-offset-1">
-                                            <div class="row">
-                                                <div class="image text-center">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-1.jpg" alt="Features Image">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="each-portfolio-heading">
-                                            <div class="heading-text overflow wow">
-                                                <div class="line"></div>
-                                                <div class="overflow">
-                                                    <div class="sub-heading-outer">
-                                                        <p class="sub-heading">BLOG</p>
-                                                    </div>
-                                                </div>
-                                                <div class="text overflow">
-                                                    <div class="inner">
-                                                        Write About Coding
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="link-list overflow wow">
-                                                <div class="link one overflow">
-                                                    <div class="inner">
-                                                        <a class="btn btn-project-detail right-icon btn-mask" href="#" data-element="project-detail">PROJECT DETAILS <i class="icon icon-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="link two overflow">
-                                                    <div class="inner">
-                                                        <a class="btn btn-slider right-icon btn-mask"  data-element="slider">VIEW SLIDES <i class="icon icon-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="line hidden-xs"></div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-10 col-md-offset-1 col-sm-12 slider-outer">
-                                            <div class="overflow">
-                                                <div class="slider text-center">
-                                                    
-                                                    <div class="project-slider-outer">
-                                                        <div class="project-slider owl-carousel">
-
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-3.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-4.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-5.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-6.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            <div class="item">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-7.jpg" alt="Slider Images" class="img-responsive">
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="btn-outer text-left">
-                                                        <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xs-12 project-detail-outer">
-                                                
-                                            <div class="project-detail">
-                                                <div class="project-detail-inner relative semi-dark-background overflow">
-
-                                                    <div class="col-md-6 col-sm-12 vertical-middle project-detail-content">
-                                                            
-                                                        <div class="overflow">
-                                                            <div class="heading-outer">
-                                                                <h2 class="heading">Write About Coding</h2>
-                                                            </div>
-                                                        </div> <!-- End: .overflow -->
-
-                                                        <div class="overflow">
-                                                            <ul class="nav list">
-                                                                <li><p class="sub-heading">BLOG</p></li>
-                                                                <li><p class="sub-heading">NOVEMBER 2023</p></li>
-                                                            </ul>
-                                                        </div> <!-- End: .overflow -->
-
-                                                        <div class="overflow">
-                                                            <div class="pera-outer m-t-30">
-                                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur porro quidem quaerat explicabo necessitatibus? Asperiores laboriosam hic vel commodi magnam eaque soluta nisi vitae? Libero aperiam amet placeat. Porro, dignissimos?</p>
-                                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde accusamus itaque quos fuga vitae eligendi inventore excepturi eum ut, iure asperiores, maxime eaque dolorem. Non illum officia sequi dolore vel.</p>
-                                                            </div>
-                                                        </div> <!-- End: .overflow -->
-
-                                                        <div class="overflow">
-                                                            <div class="full-view-outer">
-                                                                <a href="https://writeaboutcoding.com" class="btn right-icon btn-mask">SEE THE PROJECT <i class="icon icon-arrow-right"></i></a>
-                                                            </div>
-                                                        </div> <!-- End: .overflow -->
-
-                                                    </div> <!-- End: END LEFT SIDE -->
-
-                                                    <!-- Right side Image -->
-                                                    <div class="col-md-6 col-sm-12 vertical-middle overflow project-detail-image">
-                                                        <div class="row text-right display-full">
-                                                            <div class="project-detail-image-outer display-full">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/features-2.jpg" alt="Portfolio Image">
-                                                            </div>
-                                                        </div>
-                                                    </div> <!-- End: RIGHT SIDE -->
-
-                                                </div> <!-- End: .project-detail-content -->
-
-                                                <div class="clearfix"></div>
-                                                
-                                                <!-- Back Button Area -->
-                                                <div class="overflow">
-                                                    <div class="btn-outer text-center m-t-30">
-                                                        <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                    </div>
-                                                </div>
-                                                <!-- End: Back Button Area -->
-
-                                            </div> <!-- End: .project-detail -->
-
-                                        </div> <!-- End: .col-xs-12 -->
-
-                                    </div> 
-
-                                </div> <!-- End: .item -->
+                                <?php 
+                                endwhile;
+                                wp_reset_postdata();
+                                ?>
 
                             </div> <!-- End: .swiper-wrapper -->
                         </div> <!-- End: .testimonials-container -->
@@ -1498,8 +1081,8 @@
                             <div class="row m-t-5">
                                 <div class="text-center">
                                     <ul class="footer-ul">
-                                        <li><i class='bx bx-phone'></i> <a href="tel:+23481234567" class="btn-mask">(234) 816 2428 445</a></li>
-                                        <li><i class='bx bx-envelope'></i> <a href="mailto:info@codemygig.com" class="btn-mask">info@codemygig.com</a></li>
+                                        <li><i class='bx bx-phone'></i> <a href="tel:+2348142064474" class="btn-mask">(234) 814 2064 474</a></li>
+                                        <li><i class='bx bx-envelope'></i> <a href="mailto:contact@codemygig.com" class="btn-mask">contact@codemygig.com</a></li>
                                     </ul>
                                 </div>
                             </div>
