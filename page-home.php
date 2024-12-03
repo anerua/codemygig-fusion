@@ -641,11 +641,11 @@
                         </div> <!-- End: .testimonials-container -->
                     </div> <!-- End: .col-xs-12 -->
 
-                    <div class="col-sm-12 view-all text-center">
+                    <!-- <div class="col-sm-12 view-all text-center">
                         <div class="inner">
                             <a class="btn btn-project-detail right-icon btn-mask" href="#" data-element="project-detail">OUR PORTFOLIO <i class="icon icon-arrow-right"></i></a>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div> <!-- End: .row -->
             </div> <!-- End: .container -->
