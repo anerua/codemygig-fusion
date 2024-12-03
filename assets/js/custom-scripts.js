@@ -220,7 +220,7 @@
     //     scrollOffset: Math.abs( $( TopOffsetId ).outerHeight() - 1 )
     // });
 
-    $('.btn-scroll a, a.btn-scroll').on('click', function (e) {
+    $('.btn-scroll a, a.btn-scroll, #home-section a.btn-mask').on('click', function (e) {
       e.preventDefault();
 
       var target = this.hash,
