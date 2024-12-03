@@ -1042,7 +1042,7 @@
                             <div class="row m-t-5">
                                 <div class="text-center">
                                     <ul class="footer-ul">
-                                        <li><i class='bx bx-phone'></i> <a href="tel:+2348142064474" class="btn-mask">(234) 814 2064 474</a></li>
+                                        <li><i class='bx bx-phone'></i> <a href="tel:+447440673967" class="btn-mask">+44 7440 673 967</a></li>
                                         <li><i class='bx bx-envelope'></i> <a href="mailto:contact@codemygig.com" class="btn-mask">contact@codemygig.com</a></li>
                                     </ul>
                                 </div>
