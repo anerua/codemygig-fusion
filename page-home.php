@@ -27,9 +27,9 @@
                             <div class="overflow m-t-30">
                                 <div class="list-view">
                                     <ul class="nav">
-                                        <li><a class="btn-mask" href="#">WHY?</a></li>
-                                        <li><a class="btn-mask" href="#">ABOUT US</a></li>
-                                        <li><a class="btn-mask" href="#">OUR SERVICES</a></li>
+                                        <li><a class="btn-mask" href="#services-section">OUR SERVICES</a></li>
+                                        <li><a class="btn-mask" href="#portfolio-section">OUR PORTFOLIO</a></li>
+                                        <li><a class="btn-mask" href="#testimonial-section">TESTIMONIALS</a></li>
                                     </ul>
                                 </div>
                             </div>
