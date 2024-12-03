@@ -1052,7 +1052,7 @@
                                     <ul class="footer-social-ul">
                                         <li id="twitter-icon"><a href="#" class="btn-mask"><i class="icon icon-social-twitter"></i></a></li>
                                         <li id="facebook-icon"><a href="#" class="btn-mask"><i class="icon icon-social-facebook"></i></a></li>
-                                        <li id="instagram-icon"><a href="#" class="btn-mask"><i class="icon icon-social-instagram"></i></a></li>
+                                        <li id="instagram-icon"><a href="https://www.instagram.com/codemygig/" target="_blank" class="btn-mask"><i class="icon icon-social-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
