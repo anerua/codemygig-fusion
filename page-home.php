@@ -1031,6 +1031,7 @@
                             <div class="row m-t-15">
                                 <div class="text-center">
                                     <ul class="footer-ul">
+                                        <li>Australia</li>
                                         <li>Canada</li>
                                         <li>Nigeria</li>
                                         <li>United Kingdom</li>
